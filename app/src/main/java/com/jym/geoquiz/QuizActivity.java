@@ -23,6 +23,8 @@ public class QuizActivity extends AppCompatActivity {
                 Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT).show();
             }
         });
+        //结束
+        
         //FalseButton监听器
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,5 +32,6 @@ public class QuizActivity extends AppCompatActivity {
                 Toast.makeText(QuizActivity.this,R.string.incorrect_toast,Toast.LENGTH_SHORT).show();
             }
         });
+        //结束
     }
 }
