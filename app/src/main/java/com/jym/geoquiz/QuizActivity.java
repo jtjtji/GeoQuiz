@@ -23,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
                 Toast.makeText(QuizActivity.this,R.string.correct_toast,Toast.LENGTH_SHORT).show();
             }
         });
-        //FalseButton监听器
+        //FalseButton监听器 ,测试
         mFalseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
