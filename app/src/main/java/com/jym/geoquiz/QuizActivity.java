@@ -21,12 +21,17 @@ public class QuizActivity extends AppCompatActivity {
     };
     private int mCurrentIndex = 0;
     private static final String TAG="QuizActivity";
+    private static final String KEY_INDEX="index";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         Log.d(TAG,"onCreate(Bundle)called");
+        //判断是否保存了Bundle。
+        if (savedInstanceState!=null){
+            mCurrentIndex=savedInstanceState.getInt(KEY_INDEX,0);
+        }
         //找View组件并设置监听器
         mTrueButton = (Button) findViewById(R.id.true_button);
         mFalseButton = (Button) findViewById(R.id.false_button);
@@ -56,7 +61,10 @@ public class QuizActivity extends AppCompatActivity {
         });
         updateQuestion();
     }
+
+    //创建updateQuestion方法
     private void updateQuestion () {
+        Log.d(TAG,"updating question text",new Exception());
         int question = mQuestionBank[mCurrentIndex].getTextResId();
         mQuestionTextView.setText(question);
     }
@@ -96,5 +104,11 @@ public class QuizActivity extends AppCompatActivity {
     public void onDestroy(){
         super.onDestroy();
         Log.d(TAG,"onDestroy() called");
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG,"onSaveInstanceState");
+        savedInstanceState.putInt(KEY_INDEX,mCurrentIndex);
     }
 }
