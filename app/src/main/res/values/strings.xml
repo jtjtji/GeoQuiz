@@ -9,4 +9,9 @@
     <string name="question_oceans">The Pacific</string>
     <string name="question_africa">The source of theNile.</string>
     <string name="question_5">five</string>
+    <string name="warning_next">Are you sure you want to do this</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
+    <string name="title_activity_cheat">CheatActivity</string>
 </resources>
